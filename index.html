@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTY | إسماعيل محمود - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- 1. المتغيرات والسمات (Dark/Light) --- */
+        :root {
+            --primary: #6A0DAD;
+            --accent: #00E5FF;
+            --bg-dark: #0B0E23;
+            --card-bg: #161B33;
+            --text-main: #ffffff;
+            --text-muted: #B0B0B0;
+            --nav-bg:transpernt;
+        }
+
+        /* ستايل المود الفاتح */
+        body.light-mode {
+            --bg-dark: #f2f1f6f7;
+            --card-bg: #ffffff;
+            --text-main: #0c0c0c;
+            --text-muted: #555555;
+            --nav-bg: transparent;
+            --primary: #4B0082;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-main); transition: 0.3s; line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- 2. القائمة العلوية مع زر المود --- */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--nav-bg); backdrop-filter: blur(10px);
+            padding: 15px 0; border-bottom: 1px solid rgba(128,128,128,0.1);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 26px; font-weight: 900; color: var(--accent); }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav a { font-weight: 700; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        /* زر المود */
+        #theme-toggle {
+            background: none; border: none; color: var(--accent);
+            font-size: 20px; cursor: pointer; transition: 0.3s; padding: 5px;
+        }
+
+        /* --- 3. Hero Section --- */
+        .hero {
+            height: 100vh; position: relative;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        .hero::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(11, 14, 35, 0.8), rgba(11, 14, 35, 0.6)); z-index: 1;
+        }
+        body.light-mode .hero::before { background: rgba(255, 255, 255, 0.2); }
+        .hero-content { position: relative; z-index: 2; }
+
+        /* --- 4. About Me --- */
+        .about { padding: 100px 0; }
+        .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+        .about-image img { 
+            width: 100%; border-radius: 20px; border: 4px solid var(--primary); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* --- 5. Projects Section (Filtering) --- */
+        .projects { padding: 100px 0; background: rgba(0,0,0,0.05); }
+        .filter-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-btn { 
+            padding: 8px 20px; border-radius: 25px; border: 2px solid var(--primary);
+            background: transparent; color: var(--text-main); cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; }
+
+        .projects-grid { 
+            display: grid; 
+            /* هذا السطر سيجعل 3 مشاريع كحد أقصى بجانب بعضها */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            
+            /* المسافة بين المشاريع يميناً ويساراً */
+            column-gap: 30px; 
+            
+            /* المسافة الكبيرة التي تريدها بين المشاريع تحت بعضها (بالطول) */
+            row-gap: 70px !important; 
+           
+            /* مسافة من أسفل السكشن بالكامل قبل قسم الـ Contacts */
+            margin-bottom: 100px; 
+        }
+
+        .project-card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            overflow: hidden;
+            border: 1px solid rgba(128,128,128,0.1); 
+            transition: 0.4s;
+            /* احذف الـ margin-bottom من هنا لأنه يؤثر على الـ Grid بشكل خاطئ */
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card.hide { display: none; }
+        .project-image-wrapper { width: 100%; height: 280px; background: #000; overflow: hidden; }
+        .project-image-wrapper img { width: 100%; height: 100%; object-fit: contain; }
+        .project-info { padding: 20px; }
+        .project-info h3 { color: var(--accent); margin-bottom: 10px; }
+
+        /* --- 6. Contacts Section --- */
+        .contact { padding: 80px 0; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .contact-item { 
+            background: var(--card-bg); padding: 30px; border-radius: 15px; 
+            text-align: center; border: 1px solid rgba(128,128,128,0.1); transition: 0.3s;
+        }
+        .contact-item:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .contact-item i { font-size: 40px; color: var(--accent); margin-bottom: 15px; }
+        .contact-item h4 { margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(128,128,128,0.1); }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">Portofolio</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من أنا</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                    <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 style="font-size: 50px;color: #ffffff;">إسماعيل محمود</h1>
+            <p style="font-size: 22px; color: var(--accent);">Data Analyst & Web Scraper</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image"><img src="my-photo.jpg" alt="إسماعيل محمود"></div>
+                <div class="about-text">
+                    <h2 style="font-size: 35px; color: var(--accent); margin-bottom: 20px;">من أنا؟</h2>
+                    <p>أنا **إسماعيل محمود**، محلل بيانات متخصص في استخراج الرؤى من البيانات الخام. أمتلك مهارات متقدمة في بناء لوحات التحكم واستخدام تقنيات استخراج البيانات من الويب لمساعدة الشركات على اتخاذ قرارات مبنية على الحقائق.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">معرض الأعمال</h2>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="power-bi">Power BI</button>
+                <button class="filter-btn" data-filter="excel">Excel</button>
+                <button class="filter-btn" data-filter="tableau">Tableau</button>
+                <button class="filter-btn" data-filter="web-scraping">Web Scraping</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card" data-category="power-bi">
+                    <a href="https://docs.google.com/presentation/d/1gmCg_XJvc91B7ZuXNxwUvOgC-F269W5TE6A3F0ZDuA0/edit?usp=sharing" target="_blank">
+                        <div class="project-image-wrapper"><img src="IBM Attrition Dark.png" alt="Power BI Project"></div>
+                        <div class="project-info">
+                            <h3>IBM Attrition</h3>
+                            <p>تصنيف: Power BI</p>
+                        </div>
+                    </a>
+
+                    
+                </div>
+
+                <div class="project-card" data-category="power-bi">
+                    <a href="https://docs.google.com/presentation/d/15vetp7B7mDl5S7MqfTWHOEgzgh-jSwOjFdRzpLzB1Zc/edit?usp=sharing" target="_blank">
+                        <div class="project-image-wrapper"><img src="C:\Users\ELZAHBIA\Desktop\Portofolio\Adidas Dasboard.png" alt="Power BI Project"></div>
+                        <div class="project-info">
+                            <h3>Adidas sales dashboard</h3>
+                            <p>تصنيف: Power BI</p>
+                        </div>
+                    </a>
+
+                    
+                </div>
+
+
+                <div class="project-card" data-category="power-bi">
+                    <a href="https://docs.google.com/presentation/d/1VSlwD7UYLxF92IJSRtthNPML8xLFjUNtGXVASb8hHuA/edit?usp=sharing" target="_blank">
+                        <div class="project-image-wrapper"><img src="C:\Users\ELZAHBIA\Desktop\Portofolio\Salla overview light.png" alt="Power BI Project"></div>
+                        <div class="project-info">
+                            <h3>Salla call center dashboard</h3>
+                            <p>تصنيف: Power BI</p>
+                        </div>
+                    </a>
+
+                    
+                </div>
+
+                
+
+
+                <div class="project-card" data-category="excel">
+                    <a href="misuo dashboard.png">
+                        <div class="project-image-wrapper"><img src="C:\Users\ELZAHBIA\Desktop\Portofolio\misuo dashboard.png" alt="excel"></div>
+                        <div class="project-info">
+                            <h3>Misuo sales dashboard</h3>
+                            <p>تصنيف: excel</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card" data-category="tableau">
+                    <a href="HR attrion dashboard final.png">
+                        <div class="project-image-wrapper"><img src="C:\Users\ELZAHBIA\Desktop\Portofolio\HR attrion dashboard final.png"></div>
+                        <div class="project-info">
+                            <h3>Hr Attrition</h3>
+                            <p>تصنيف: tableau</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card" data-category="tableau">
+                    <a href="Marketing Dashboard.png">
+                        <div class="project-image-wrapper"><img src="C:\Users\ELZAHBIA\Desktop\Portofolio\Marketing Dashboard.png" alt="tableau"></div>
+                        <div class="project-info">
+                            <h3>Marketing dashboard</h3>
+                            <p>تصنيف: tableau</p>
+                        </div>
+                    </a>
+                </div>
+
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">تواصل معي</h2>
+            <div class="contact-grid">
+                <a href="https://www.linkedin.com/in/esmail-mahmoud-76535b205?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <p>إسماعيل محمود</p>
+                </a>
+                <a href="mailto:esmail@example.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>البريد الإلكتروني</h4>
+                    <p>esmaail.maahmoud@gmail.com</p>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>رقم الهاتف</h4>
+                    <p>+20 1141069159</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>العنوان</h4>
+                    <p>شبرا مصر، القاهرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LIBERTY | صمم بواسطة إسماعيل محمود</p>
+    </footer>
+
+    <script>
+        // كود تبديل المود (Dark/Light)
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if(body.classList.contains('light-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // كود فلترة المشاريع
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
