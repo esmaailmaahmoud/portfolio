@@ -181,11 +181,29 @@
     margin-top: 20px;
         }    
 
-       .fas.fa-download{
-           margin_top:50px;
-           color:#00e1f8;
-           text_color:#00e1f8;
-       }
+       /* تنسيق زر التحميل بالكامل */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;            /* مسافة بين الأيقونة والكلام */
+    margin-top: 30px;     /* عشان تبعد الجملة عن نص التعريف */
+    color: #00e1f8;       /* تلوين النص */
+    text-decoration: none; /* إلغاء الخط اللي تحت الكلمة */
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* تلوين الأيقونة داخل الزرار */
+.download-btn i {
+    color: #00e1f8;       /* تلوين الأيقونة بنفس الدرجة */
+    font-size: 1.2rem;
+}
+
+/* تأثير عند الوقوف بالماوس */
+.download-btn:hover {
+    filter: brightness(1.2); /* بيخلي اللون ينور أكتر */
+    transform: scale(1.05);  /* تكبير بسيط جداً */
+}
     </style>
 </head>
 <body>
