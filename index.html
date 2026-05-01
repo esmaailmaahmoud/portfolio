@@ -7,6 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- ... أكوادك القديمة ... -->
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H0GYJK384Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H0GYJK384Z');
+</script>
     <style>
         /* --- 1. المتغيرات والسمات (Dark/Light) --- */
         :root {
@@ -200,71 +211,90 @@
         </div>
     </section>
     
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 id="projects-heading" style="text-align: center; margin-bottom: 40px;">Work Portfolio</h2>
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
-                <button class="filter-btn" data-filter="power-bi">Power BI</button>
-                <button class="filter-btn" data-filter="excel">Excel</button>
-                <button class="filter-btn" data-filter="tableau">Tableau</button>
-                <button class="filter-btn" data-filter="web-scraping">Web Scraping</button>
+   <section class="projects" id="projects">
+    <div class="container">
+        <h2 id="projects-heading" style="text-align: center; margin-bottom: 40px;">Work Portfolio</h2>
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+            <button class="filter-btn" data-filter="power-bi">Power BI</button>
+            <button class="filter-btn" data-filter="excel">Excel</button>
+            <button class="filter-btn" data-filter="tableau">Tableau</button>
+            <button class="filter-btn" data-filter="web-scraping">Web Scraping</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- المشروع الأول: IBM Attrition -->
+            <div class="project-card" data-category="power-bi">
+                <a href="https://docs.google.com/presentation/d/1gmCg_XJvc91B7ZuXNxwUvOgC-F269W5TE6A3F0ZDuA0/edit?usp=sharing" 
+                   target="_blank" 
+                   class="project-btn" 
+                   data-name="PowerBI_IBM_Attrition">
+                    <div class="project-image-wrapper"><img src="IBM Attrition Dark.png" alt="Power BI Project"></div>
+                    <div class="project-info">
+                        <h3>IBM Attrition</h3>
+                        <p>Power BI</p>
+                    </div>
+                </a>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card" data-category="power-bi">
-                    <a href="https://docs.google.com/presentation/d/1gmCg_XJvc91B7ZuXNxwUvOgC-F269W5TE6A3F0ZDuA0/edit?usp=sharing" target="_blank">
-                        <div class="project-image-wrapper"><img src="IBM Attrition Dark.png" alt="Power BI Project"></div>
-                        <div class="project-info">
-                            <h3>IBM Attrition</h3>
-                            <p>Power BI</p>
-                        </div>
-                    </a>
-                </div>
+            <!-- المشروع الثاني: Adidas Sales -->
+            <div class="project-card" data-category="power-bi">
+                <a href="https://docs.google.com/presentation/d/15vetp7B7mDl5S7MqfTWHOEgzgh-jSwOjFdRzpLzB1Zc/edit?usp=sharing" 
+                   target="_blank" 
+                   class="project-btn" 
+                   data-name="PowerBI_Adidas_Sales">
+                    <div class="project-image-wrapper"><img src="AdidasDasboard.png" alt="Power BI Project"></div>
+                    <div class="project-info">
+                        <h3>Adidas sales dashboard</h3>
+                        <p>Power BI</p>
+                    </div>
+                </a>
+            </div>
 
-                <div class="project-card" data-category="power-bi">
-                    <a href="https://docs.google.com/presentation/d/15vetp7B7mDl5S7MqfTWHOEgzgh-jSwOjFdRzpLzB1Zc/edit?usp=sharing" target="_blank">
-                        <div class="project-image-wrapper"><img src="AdidasDasboard.png" alt="Power BI Project"></div>
-                        <div class="project-info">
-                            <h3>Adidas sales dashboard</h3>
-                            <p>Power BI</p>
-                        </div>
-                    </a>
-                </div>
+            <!-- المشروع الثالث: Salla Call Center -->
+            <div class="project-card" data-category="power-bi">
+                <a href="https://docs.google.com/presentation/d/1VSlwD7UYLxF92IJSRtthNPML8xLFjUNtGXVASb8hHuA/edit?usp=sharing" 
+                   target="_blank" 
+                   class="project-btn" 
+                   data-name="PowerBI_Salla_Dashboard">
+                    <div class="project-image-wrapper"><img src="Salla overview light.png" alt="Power BI Project"></div>
+                    <div class="project-info">
+                        <h3>Salla call center dashboard</h3>
+                        <p>Power BI</p>
+                    </div>
+                </a>
+            </div>
 
-                <div class="project-card" data-category="power-bi">
-                    <a href="https://docs.google.com/presentation/d/1VSlwD7UYLxF92IJSRtthNPML8xLFjUNtGXVASb8hHuA/edit?usp=sharing" target="_blank">
-                        <div class="project-image-wrapper"><img src="Salla overview light.png" alt="Power BI Project"></div>
-                        <div class="project-info">
-                            <h3>Salla call center dashboard</h3>
-                            <p>Power BI</p>
-                        </div>
-                    </a>
-                </div>
+            <!-- المشروع الرابع: Misuo Sales (Excel) -->
+            <div class="project-card" data-category="excel">
+                <a href="misuo dashboard.png" 
+                   target="_blank" 
+                   class="project-btn" 
+                   data-name="Excel_Misuo_Dashboard">
+                    <div class="project-image-wrapper"><img src="misuo dashboard.png" alt="excel"></div>
+                    <div class="project-info">
+                        <h3>Misuo sales dashboard</h3>
+                        <p>Excel</p>
+                    </div>
+                </a>
+            </div>
 
-                <div class="project-card" data-category="excel">
-                    <a href="misuo dashboard.png" target="_blank">
-                        <div class="project-image-wrapper"><img src="misuo dashboard.png" alt="excel"></div>
-                        <div class="project-info">
-                            <h3>Misuo sales dashboard</h3>
-                            <p>Excel</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="project-card" data-category="tableau">
-                    <a href="HR_attrion.png" target="_blank">
-                        <div class="project-image-wrapper"><img src="HR_attrion.png"></div>
-                        <div class="project-info">
-                            <h3>Hr Attrition</h3>
-                            <p>Tableau</p>
-                        </div>
-                    </a>
-                </div>
+            <!-- المشروع الخامس: HR Attrition (Tableau) -->
+            <div class="project-card" data-category="tableau">
+                <a href="HR_attrion.png" 
+                   target="_blank" 
+                   class="project-btn" 
+                   data-name="Tableau_HR_Attrition">
+                    <div class="project-image-wrapper"><img src="HR_attrion.png"></div>
+                    <div class="project-info">
+                        <h3>Hr Attrition</h3>
+                        <p>Tableau</p>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <section class="contact" id="contact">
         <div class="container">
             <h2 id="contact-heading" style="text-align: center; margin-bottom: 50px;">Contact Me</h2>
@@ -298,99 +328,92 @@
     </footer>
 
     <script>
-        // --- 1. منطق اللغة ---
-        const translations = {
-            ar: {
-                navHome: "الرئيسية", navAbout: "من أنا", navProjects: "المشاريع", navContact: "تواصل",
-                heroName: "إسماعيل محمود", heroTitle: "خبير موارد بشرية ومحلل بيانات",
-                aboutHeading: "من أنا؟", 
-                aboutP1: "أنا **إسماعيل محمود**، خبير موارد بشرية بخبرة 6 سنوات في مجالات متنوعة تشمل (المجال الطبي، التكنولوجيا، مراكز الاتصال، السياحة، اللوجستيات، والخدمات المصرفية). حاصل على دبلوم في تحليل البيانات، ودبلوم الموارد البشرية من الأكاديمية العربية (AAST).",
-                aboutP2: "متخصص في استخراج الرؤى من البيانات الخام وبناء لوحات التحكم لمساعدة الشركات على اتخاذ قرارات مبنية على الحقائق، مع خبرة واسعة في مجال الموارد البشرية وربط البيزنس بتحليل البيانات بناءا على أرقام لسهولة اتخاذ القرار.",
-                cvText: "تحميل السيرة الذاتية (CV)", skillsHeading: "أهم المهارات",
-                projectsHeading: "معرض الأعمال", filterAll: "الكل",
-                contactHeading: "تواصل معي", contactEmail: "البريد الإلكتروني", contactPhone: "رقم الهاتف",
-                contactName: "إسماعيل محمود", contactAddressTitle: "العنوان", contactAddressVal: "رمسيس، القاهرة",
-                footerText: "© 2026 LIBERTY | صمم بواسطة إسماعيل محمود"
-            },
-            en: {
-                navHome: "Home", navAbout: "About Me", navProjects: "Projects", navContact: "Contact",
-                heroName: "Esmail Mahmoud", heroTitle: "HR supervisor & Data Analyst & Web Scraper",
-                aboutHeading: "About Me",
-                aboutP1: "I am **Esmail Mahmoud**, an HR Expert with 6 years of experience across various industries (Medical, Technology, Call Centers, Tourism, Logistics, and Banking). I hold a Data Analysis Diploma and an HR Diploma from the Arab Academy (AAST).",
-                aboutP2: "Specialized in extracting insights from raw data and building dashboards to help companies make fact-based decisions, with extensive experience in HR and bridging business with data analytics based on numbers for easy decision-making.",
-                cvText: "Download CV", skillsHeading: "Top Skills",
-                projectsHeading: "Work Portfolio", filterAll: "All",
-                contactHeading: "Contact Me", contactEmail: "Email", contactPhone: "Phone Number",
-                contactName: "Esmail Mahmoud", contactAddressTitle: "Address", contactAddressVal: "Ramses, Cairo",
-                footerText: "© 2026 LIBERTY | Designed by Esmail Mahmoud"
+    // --- 1. منطق اللغة ---
+    const translations = {
+        ar: {
+            navHome: "الرئيسية", navAbout: "من أنا", navProjects: "المشاريع", navContact: "تواصل",
+            heroName: "إسماعيل محمود", heroTitle: "خبير موارد بشرية ومحلل بيانات",
+            aboutHeading: "من أنا؟", 
+            // حذفنا النجوم هنا لتظهر بشكل صحيح
+            aboutP1: "أنا إسماعيل محمود، خبير موارد بشرية بخبرة 6 سنوات في مجالات متنوعة تشمل (المجال الطبي، التكنولوجيا، مراكز الاتصال، السياحة، اللوجستيات، والخدمات المصرفية). حاصل على دبلوم في تحليل البيانات، ودبلوم الموارد البشرية من الأكاديمية العربية (AAST).",
+            aboutP2: "متخصص في استخراج الرؤى من البيانات الخام وبناء لوحات التحكم لمساعدة الشركات على اتخاذ قرارات مبنية على الحقائق، مع خبرة واسعة في مجال الموارد البشرية وربط البيزنس بتحليل البيانات بناءا على أرقام لسهولة اتخاذ القرار.",
+            cvText: "تحميل السيرة الذاتية (CV)", skillsHeading: "أهم المهارات",
+            projectsHeading: "معرض الأعمال", filterAll: "الكل",
+            contactHeading: "تواصل معي", contactEmail: "البريد الإلكتروني", contactPhone: "رقم الهاتف",
+            contactName: "إسماعيل محمود", contactAddressTitle: "العنوان", contactAddressVal: "رمسيس، القاهرة",
+            footerText: "© 2026 LIBERTY | صمم بواسطة إسماعيل محمود"
+        },
+        en: {
+            navHome: "Home", navAbout: "About Me", navProjects: "Projects", navContact: "Contact",
+            heroName: "Esmail Mahmoud", heroTitle: "HR supervisor & Data Analyst & Web Scraper",
+            aboutHeading: "About Me",
+            aboutP1: "I am Esmail Mahmoud, an HR Expert with 6 years of experience across various industries (Medical, Technology, Call Centers, Tourism, Logistics, and Banking). I hold a Data Analysis Diploma and an HR Diploma from the Arab Academy (AAST).",
+            aboutP2: "Specialized in extracting insights from raw data and building dashboards to help companies make fact-based decisions, with extensive experience in HR and bridging business with data analytics based on numbers for easy decision-making.",
+            cvText: "Download CV", skillsHeading: "Top Skills",
+            projectsHeading: "Work Portfolio", filterAll: "All",
+            contactHeading: "Contact Me", contactEmail: "Email", contactPhone: "Phone Number",
+            contactName: "Esmail Mahmoud", contactAddressTitle: "Address", contactAddressVal: "Ramses, Cairo",
+            footerText: "© 2026 LIBERTY | Designed by Esmail Mahmoud"
+        }
+    };
+
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = 'en';
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        langToggle.innerText = currentLang === 'en' ? 'AR' : 'EN';
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = currentLang;
+
+        // تحديث كل النصوص
+        Object.keys(translations[currentLang]).forEach(key => {
+            const element = document.getElementById(key.replace(/[A-Z]/g, m => "-" + m.toLowerCase()));
+            if (element) {
+                element.innerText = translations[currentLang][key];
             }
-        };
-
-        const langToggle = document.getElementById('lang-toggle');
-        let currentLang = 'en'; // الإنجليزية هي الافتراضية الآن
-
-        langToggle.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            langToggle.innerText = currentLang === 'en' ? 'AR' : 'EN';
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLang;
-
-            // تحديث النصوص
-            document.getElementById('nav-home').innerText = translations[currentLang].navHome;
-            document.getElementById('nav-about').innerText = translations[currentLang].navAbout;
-            document.getElementById('nav-projects').innerText = translations[currentLang].navProjects;
-            document.getElementById('nav-contact').innerText = translations[currentLang].navContact;
-            document.getElementById('hero-name').innerText = translations[currentLang].heroName;
-            document.getElementById('hero-title').innerText = translations[currentLang].heroTitle;
-            document.getElementById('about-heading').innerText = translations[currentLang].aboutHeading;
-            document.getElementById('about-p1').innerText = translations[currentLang].aboutP1;
-            document.getElementById('about-p2').innerText = translations[currentLang].aboutP2;
-            document.getElementById('cv-text').innerText = translations[currentLang].cvText;
-            document.getElementById('skills-heading').innerText = translations[currentLang].skillsHeading;
-            document.getElementById('projects-heading').innerText = translations[currentLang].projectsHeading;
-            document.getElementById('filter-all').innerText = translations[currentLang].filterAll;
-            document.getElementById('contact-heading').innerText = translations[currentLang].contactHeading;
-            document.getElementById('contact-email').innerText = translations[currentLang].contactEmail;
-            document.getElementById('contact-phone').innerText = translations[currentLang].contactPhone;
-            document.getElementById('contact-name').innerText = translations[currentLang].contactName;
-            document.getElementById('contact-address-title').innerText = translations[currentLang].contactAddressTitle;
-            document.getElementById('contact-address-val').innerText = translations[currentLang].contactAddressVal;
-            document.getElementById('footer-text').innerText = translations[currentLang].footerText;
         });
+        
+        // تعديل يدوي للعناصر التي لم تتبع النمط أعلاه
+        document.getElementById('nav-home').innerText = translations[currentLang].navHome;
+        document.getElementById('nav-about').innerText = translations[currentLang].navAbout;
+        document.getElementById('nav-projects').innerText = translations[currentLang].navProjects;
+        document.getElementById('nav-contact').innerText = translations[currentLang].navContact;
+        document.getElementById('cv-text').innerText = translations[currentLang].cvText;
+        document.getElementById('filter-all').innerText = translations[currentLang].filterAll;
+    });
 
-        // --- 2. كود تبديل المود (Dark/Light) ---
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
+    // --- 2. تبديل المود ---
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
         const icon = themeToggle.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    });
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            if(body.classList.contains('light-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-
-        // --- 3. كود فلترة المشاريع ---
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filter = btn.getAttribute('data-filter');
-                cards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.classList.remove('hide');
-                    } else {
-                        card.classList.add('hide');
-                    }
-                });
+    // --- 3. فلترة المشاريع ---
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'flex' : 'none';
             });
         });
-    </script>
+    });
+
+    // --- 4. تتبع جوجل (المشاريع والـ CV) ---
+    document.querySelectorAll('.project-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            gtag('event', 'click_project', { 'project_name': this.getAttribute('data-name') });
+        });
+    });
+
+    document.querySelector('.download-btn').addEventListener('click', function() {
+        gtag('event', 'cv_download', { 'event_category': 'Engagement', 'event_label': 'Resume' });
+    });
+</script>    
 </body>
 </html>
